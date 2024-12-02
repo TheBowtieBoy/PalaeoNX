@@ -10,19 +10,21 @@
             padding: 0;
             font-family: Arial, sans-serif;
             background: repeating-linear-gradient(
-            45deg,
-            rgb(66, 165, 165) 10px,
-            rgb(0, 17, 17) 20px
-        );
+                45deg,
+                rgb(66, 165, 165) 20px,
+                rgb(0, 17, 17) 40px
+            );
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             height: 100vh;
         }
 
         .box {
+            position: absolute;
+            top: 20px;
             background-color: rgb(21, 114, 83);
-            color: rgb(255, 255, 255);
+            color: white;
             padding: 20px;
             border-radius: 15px;
             text-align: center;
@@ -32,11 +34,53 @@
         h1 {
             margin: 0;
         }
+
+        .button-container {
+            position: absolute;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dino-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgb(44, 62, 80);
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dino-button:hover {
+            background-color: rgb(67, 81, 104);
+        }
     </style>
 </head>
 <body>
+
     <div class="box">
         <h1>Hello and welcome to PalaeoNX 0.0.1</h1>
     </div>
+
+    <div class="button-container">
+        <button class="dino-button" onclick="showPopup('Therizinosaurus')">Button 1</button>
+        <button class="dino-button" onclick="showPopup('Tyrannosaurus')">Button 2</button>
+        <button class="dino-button" onclick="showPopup('Velociraptor')">Button 3</button>
+        <button class="dino-button" onclick="showPopup('Triceratops')">Button 4</button>
+        <button class="dino-button" onclick="showPopup('Stegosaurus')">Button 5</button>
+        <button class="dino-button" onclick="showPopup('Brachiosaurus')">Button 6</button>
+        <button class="dino-button" onclick="showPopup('Spinosaurus')">Button 7</button>
+        <button class="dino-button" onclick="showPopup('Ankylosaurus')">Button 8</button>
+    </div>
+
+    <script>
+        function showPopup(dinosaur) {
+            alert("You discovered: " + dinosaur + "!");
+        }
+    </script>
+
 </body>
 </html>
