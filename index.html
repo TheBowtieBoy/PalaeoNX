@@ -3,20 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PalaeoNX 0.0.1</title>
+    <title>PalaeoNX 0.0.1.5</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background: repeating-linear-gradient(
-                45deg,
-                rgb(66, 165, 165) 20px,
-                rgb(0, 17, 17) 40px
-            );
+            background: linear-gradient(to top, teal, darkcyan);
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            justify-content: flex-start;
+            align-items: center;
             height: 100vh;
         }
 
@@ -38,9 +34,11 @@
         .button-container {
             position: absolute;
             left: 20px;
+            top: 10%;
+            bottom: 10%;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            justify-content: space-between;
         }
 
         .dino-button {
@@ -55,7 +53,32 @@
         }
 
         .dino-button:hover {
-            background-color: rgb(67, 81, 104);
+            background-color: rgb(51, 75, 114);
+        }
+
+        .dino-info {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            display: none;
+            width: 300px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .dino-info h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .dino-info p {
+            margin: 10px 0 0;
+            font-size: 18px;
         }
     </style>
 </head>
@@ -66,19 +89,27 @@
     </div>
 
     <div class="button-container">
-        <button class="dino-button" onclick="showPopup('Therizinosaurus')">Button 1</button>
-        <button class="dino-button" onclick="showPopup('Tyrannosaurus')">Button 2</button>
-        <button class="dino-button" onclick="showPopup('Velociraptor')">Button 3</button>
-        <button class="dino-button" onclick="showPopup('Triceratops')">Button 4</button>
-        <button class="dino-button" onclick="showPopup('Stegosaurus')">Button 5</button>
-        <button class="dino-button" onclick="showPopup('Brachiosaurus')">Button 6</button>
-        <button class="dino-button" onclick="showPopup('Spinosaurus')">Button 7</button>
-        <button class="dino-button" onclick="showPopup('Ankylosaurus')">Button 8</button>
+        <button class="dino-button" onclick="showDinoInfo('Therizinosaurus', 'Theh-rih-zin-oh-sore-us')">Button 1</button>
+        <button class="dino-button" onclick="showDinoInfo('Tyrannosaurus', 'Tie-ran-oh-sore-us')">Button 2</button>
+        <button class="dino-button" onclick="showDinoInfo('Velociraptor', 'Vuh-loss-ih-rap-tor')">Button 3</button>
+        <button class="dino-button" onclick="showDinoInfo('Triceratops', 'Try-ser-uh-tops')">Button 4</button>
+        <button class="dino-button" onclick="showDinoInfo('Stegosaurus', 'Steg-oh-sore-us')">Button 5</button>
+        <button class="dino-button" onclick="showDinoInfo('Brachiosaurus', 'Brack-ee-oh-sore-us')">Button 6</button>
+        <button class="dino-button" onclick="showDinoInfo('Spinosaurus', 'Spy-no-sore-us')">Button 7</button>
+        <button class="dino-button" onclick="showDinoInfo('Ankylosaurus', 'Ank-eye-lo-sore-us')">Button 8</button>
+    </div>
+
+    <div id="dino-info" class="dino-info">
+        <h2 id="dino-name"></h2>
+        <p id="dino-pronounce"></p>
     </div>
 
     <script>
-        function showPopup(dinosaur) {
-            alert("You discovered: " + dinosaur + "!");
+        function showDinoInfo(name, pronunciation) {
+            const infoBox = document.getElementById('dino-info');
+            document.getElementById('dino-name').textContent = name;
+            document.getElementById('dino-pronounce').textContent = "Pronounced: " + pronunciation;
+            infoBox.style.display = 'block';
         }
     </script>
 
