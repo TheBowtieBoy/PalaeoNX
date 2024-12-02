@@ -77,8 +77,11 @@
         }
 
         .dino-info p {
-            margin: 10px 0 0;
+            margin: 10px 0;
             font-size: 18px;
+            word-break: break-word;
+            max-width: 25ch;
+            line-height: 1.5;
         }
     </style>
 </head>
@@ -89,26 +92,28 @@
     </div>
 
     <div class="button-container">
-        <button class="dino-button" onclick="showDinoInfo('Therizinosaurus', 'Theh-rih-zin-oh-sore-us', 'Therizinosaurus is a unique species of therapod, unique to the family of therizinosaurids, unlike most other therapods, the therizinosaurus were herbivores who used their abnormally long claws for foliage cutting and grabbing high up branches.')">Button 1</button>
-        <button class="dino-button" onclick="showDinoInfo('Tyrannosaurus', 'Tie-ran-oh-sore-us')">Button 2</button>
-        <button class="dino-button" onclick="showDinoInfo('Velociraptor', 'Vuh-loss-ih-rap-tor')">Button 3</button>
-        <button class="dino-button" onclick="showDinoInfo('Triceratops', 'Try-ser-uh-tops')">Button 4</button>
-        <button class="dino-button" onclick="showDinoInfo('Stegosaurus', 'Steg-oh-sore-us')">Button 5</button>
-        <button class="dino-button" onclick="showDinoInfo('Brachiosaurus', 'Brack-ee-oh-sore-us')">Button 6</button>
-        <button class="dino-button" onclick="showDinoInfo('Spinosaurus', 'Spy-no-sore-us')">Button 7</button>
-        <button class="dino-button" onclick="showDinoInfo('Ankylosaurus', 'Ank-eye-lo-sore-us')">Button 8</button>
+        <button class="dino-button" onclick="showDinoInfo('Therizinosaurus', 'Theh-rih-zin-oh-sore-us', 'Therizinosaurus is a unique species of theropod. Unlike most other theropods, it was herbivorous and used its long claws to cut foliage and reach branches.')">Button 1</button>
+        <button class="dino-button" onclick="showDinoInfo('Tyrannosaurus', 'Tie-ran-oh-sore-us', 'Tyrannosaurus was a massive carnivorous dinosaur known for its powerful bite and large size.')">Button 2</button>
+        <button class="dino-button" onclick="showDinoInfo('Velociraptor', 'Vuh-loss-ih-rap-tor', 'Velociraptor was a fast, agile predator, often hunting in packs.')">Button 3</button>
+        <button class="dino-button" onclick="showDinoInfo('Triceratops', 'Try-ser-uh-tops', 'Triceratops was a herbivorous dinosaur with three horns and a large frill.')">Button 4</button>
+        <button class="dino-button" onclick="showDinoInfo('Stegosaurus', 'Steg-oh-sore-us', 'Stegosaurus had a distinctive row of plates along its back and a spiked tail.')">Button 5</button>
+        <button class="dino-button" onclick="showDinoInfo('Brachiosaurus', 'Brack-ee-oh-sore-us', 'Brachiosaurus was a long-necked dinosaur that could reach high vegetation.')">Button 6</button>
+        <button class="dino-button" onclick="showDinoInfo('Spinosaurus', 'Spy-no-sore-us', 'Spinosaurus was a large, semi-aquatic predator with a distinctive sail on its back.')">Button 7</button>
+        <button class="dino-button" onclick="showDinoInfo('Ankylosaurus', 'Ank-eye-lo-sore-us', 'Ankylosaurus was a heavily armored dinosaur with a club-like tail.')">Button 8</button>
     </div>
 
     <div id="dino-info" class="dino-info">
         <h2 id="dino-name"></h2>
         <p id="dino-pronounce"></p>
+        <p id="dino-description"></p>
     </div>
 
     <script>
-        function showDinoInfo(name, pronunciation) {
+        function showDinoInfo(name, pronunciation, description) {
             const infoBox = document.getElementById('dino-info');
             document.getElementById('dino-name').textContent = name;
             document.getElementById('dino-pronounce').textContent = "Pronounced: " + pronunciation;
+            document.getElementById('dino-description').textContent = description;
             infoBox.style.display = 'block';
         }
     </script>
