@@ -3,120 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PalaeoNX 0.0.1.5</title>
+    <title>PalaeoNX 0.2</title>
     <style>
         body {
             margin: 0;
             padding: 0;
+            background-color: #008B8B; /* Dark Cyan */
             font-family: Arial, sans-serif;
-            background: linear-gradient(to top, teal, darkcyan);
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .box {
-            position: absolute;
-            top: 20px;
-            background-color: rgb(21, 114, 83);
             color: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: centre;
         }
 
         h1 {
-            margin: 0;
+            margin: 20px;
+            font-size: 2.5rem;
         }
 
-        .button-container {
+        .top-right-image {
             position: absolute;
-            left: 20px;
-            top: 10%;
-            bottom: 10%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            top: 10px;
+            right: 10px;
         }
 
-        .dino-button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background-color: rgb(44, 62, 80);
-            color: white;
-            font-size: 14px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .dino-button:hover {
-            background-color: rgb(51, 75, 114);
-        }
-
-        .dino-info {
-            position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            display: none;
-            width: 300px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        .dino-info h2 {
-            margin: 0;
-            font-size: 24px;
-        }
-
-        .dino-info p {
-            margin: 10px 0;
-            font-size: 18px;
-            word-break: break-word;
-            max-width: 25ch;
-            line-height: 1.5;
+        .top-right-image img {
+            max-width: 100px;
+            height: auto;
         }
     </style>
 </head>
 <body>
-
-    <div class="box">
-        <h1>Hello and welcome to PalaeoNX 0.0.1.5</h1>
+    <h1>PalaeoNX 0.2</h1>
+    <div class="top-right-image">
+        <img src="PalaeoNX.png" alt="PalaeoNX logo">
     </div>
-
-    <div class="button-container">
-        <button class="dino-button" onclick="showDinoInfo('Therizinosaurus', 'Theh-rih-zin-oh-sore-us', 'Therizinosaurus is a unique species of theropod. Unlike most other theropods, it was herbivorous and used its long claws to cut foliage and reach branches.')">Button 1</button>
-        <button class="dino-button" onclick="showDinoInfo('Tyrannosaurus', 'Tie-ran-oh-sore-us', 'Tyrannosaurus was a massive carnivorous dinosaur known for its powerful bite and large size.')">Button 2</button>
-        <button class="dino-button" onclick="showDinoInfo('Velociraptor', 'Vuh-loss-ih-rap-tor', 'Velociraptor was a fast, agile predator, often hunting in packs.')">Button 3</button>
-        <button class="dino-button" onclick="showDinoInfo('Triceratops', 'Try-ser-uh-tops', 'Triceratops was a herbivorous dinosaur with three horns and a large frill.')">Button 4</button>
-        <button class="dino-button" onclick="showDinoInfo('Stegosaurus', 'Steg-oh-sore-us', 'Stegosaurus had a distinctive row of plates along its back and a spiked tail.')">Button 5</button>
-        <button class="dino-button" onclick="showDinoInfo('Brachiosaurus', 'Brack-ee-oh-sore-us', 'Brachiosaurus was a long-necked dinosaur that could reach high vegetation.')">Button 6</button>
-        <button class="dino-button" onclick="showDinoInfo('Spinosaurus', 'Spy-no-sore-us', 'Spinosaurus was a large, semi-aquatic predator with a distinctive sail on its back.')">Button 7</button>
-        <button class="dino-button" onclick="showDinoInfo('Ankylosaurus', 'Ank-eye-lo-sore-us', 'Ankylosaurus was a heavily armored dinosaur with a club-like tail.')">Button 8</button>
-    </div>
-
-    <div id="dino-info" class="dino-info">
-        <h2 id="dino-name"></h2>
-        <p id="dino-pronounce"></p>
-        <p id="dino-description"></p>
-    </div>
-
-    <script>
-        function showDinoInfo(name, pronunciation, description) {
-            const infoBox = document.getElementById('dino-info');
-            document.getElementById('dino-name').textContent = name;
-            document.getElementById('dino-pronounce').textContent = "Pronounced: " + pronunciation;
-            document.getElementById('dino-description').textContent = description;
-            infoBox.style.display = 'block';
-        }
-    </script>
-
 </body>
 </html>
